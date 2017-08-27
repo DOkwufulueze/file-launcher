@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Installer for file-launcher
+# Author: Daniel Okwufulueze
+# Date: 27/08/2017
+
+binDirectory="$(pwd)/bin" ;
+
+# exportString1='[[ $PATH =~ "file-launcher/bin" ]] || export PATH="${PATH}:';
+# exportString2="${binDirectory}\"";
+# exportString="${exportString1}${exportString2}";
+
+# if [[ !($PATH =~ 'file-launcher/bin') ]]; then
+#   ([[ -f ~/.bash_profile ]] &&
+#   echo "alias file-launcher='ruby ${binDirectory}/app.rb'" >> ~/.bash_profile &&
+#   echo "${exportString}" >> ~/.bash_profile &&
+#   source ~/.bash_profile && echo 'file-launcher successfully installed'
+#   ) ||
+#   ([[ -f ~/.bashrc ]] &&
+#   echo "alias file-launcher='ruby ${binDirectory}/app.rb'" >> ~/.bashrc &&
+#   echo "${exportString}" >> ~/.bashrc &&
+#   source ~/.bashrc && echo 'file-launcher successfully installed'
+#   );
+# fi
+
+export PATH="${PATH}:${binDirectory}" && echo 'file-launcher successfully installed';
+exec '/bin/bash';
