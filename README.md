@@ -1,5 +1,8 @@
 # file-launcher
 
+## Stable Version
+      v1.0.0
+
 ## About
 A ruby app that automatically launches files using appropriate applications.
 
