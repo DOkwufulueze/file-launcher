@@ -20,8 +20,20 @@ A ruby app that automatically launches files using appropriate applications.
   
   `./bin/install`
 
+  If you already had file-launcher installed on your computer, the `./bin/install` command will inform you of the fact. You'll see the following on your terminal:
+
+  `You already have file-launcher installed on your machine`
+
 4. ### Use file-launcher
+  * You can call file-launcher with a file path argument
+
+  `file-launcher [path/to/file]`
+
+  * You can also simply call file-launcher without any argument. It'll ask you to specify your file path
+
   `file-launcher`
+
+  It's that easy and friendly...
 
 ## Bugs
 Please send bug issues you may encounter to [Issues](https://github.com/DOkwufulueze/file-launcher/issues).

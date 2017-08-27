@@ -23,5 +23,9 @@ binDirectory="$(pwd)/bin" ;
 #   );
 # fi
 
-export PATH="${PATH}:${binDirectory}" && echo 'file-launcher successfully installed';
-exec '/bin/bash';
+if [[ $PATH =~ 'file-launcher/bin' ]]; then
+  echo "You already have file-launcher installed on your machine";
+else
+  export PATH="${PATH}:${binDirectory}" && echo 'file-launcher successfully installed';
+  exec '/bin/bash';
+fi

@@ -2,9 +2,7 @@
 
 file_path_name = File.expand_path('../../lib/file_launcher', __FILE__)
 require file_path_name
-
-puts "Enter a file name to launch it"
-file_name = gets.chomp
+file_name = ARGV[0]
 file_launcher = FileLauncher.new({
   vlc: ['webm', 'mp4', 'mp3'],
   gedit: ['txt'],
@@ -12,4 +10,14 @@ file_launcher = FileLauncher.new({
   eog: ['gif', 'jpg', 'jpeg', 'png']
 })
 
-file_launcher.launch file_name
+begin
+  if !(file_name.nil? || file_name.empty?)
+    file_launcher.launch file_name
+  else
+    puts "Enter a file name to launch it"
+    file_name = gets.chomp
+    file_launcher.launch file_name
+  end
+rescue Exception => e
+  puts "Invalid entry to file-launcher"
+end
